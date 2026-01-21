@@ -1,0 +1,129 @@
+/* ========== ILLUSTRATIONS ========== */
+
+.auth-illustration {
+  width: 100%;
+  height: 380px;
+  border-radius: 24px;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.95;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* MAIN LOGIN (ROLE SELECT) */
+.illus-main {
+  background-image: radial-gradient(
+      circle at 30% 30%,
+      rgba(138, 99, 255, 0.6),
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 70% 70%,
+      rgba(0, 200, 255, 0.45),
+      transparent 55%
+    );
+}
+
+/* ADMIN */
+.illus-admin {
+  background-image: radial-gradient(
+      circle at 40% 40%,
+      rgba(255, 140, 0, 0.55),
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 70% 60%,
+      rgba(255, 60, 120, 0.45),
+      transparent 55%
+    );
+}
+
+/* COUNSELOR */
+.illus-counselor {
+  background-image: radial-gradient(
+      circle at 35% 35%,
+      rgba(0, 220, 160, 0.55),
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 70% 60%,
+      rgba(0, 140, 255, 0.45),
+      transparent 55%
+    );
+}
+
+/* HIDE ILLUSTRATION ON SMALL DEVICES */
+@media (max-width: 900px) {
+  .auth-illustration {
+    display: none;
+  }
+}
+
+/* ========== ILLUSTRATION CONTENT ========== */
+
+.illus-glass {
+  width: 220px;
+  height: 220px;
+  border-radius: 24px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ICON BASE */
+.illus-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 34px;
+  color: #fff;
+}
+
+/* ROLE ICONS */
+.illus-icon-main::before {
+  content: "🎯";
+}
+
+.illus-icon-admin::before {
+  content: "👑";
+}
+
+.illus-icon-counselor::before {
+  content: "👥";
+}
+
+/* ICON COLORS */
+.illus-icon-main {
+  background: linear-gradient(135deg, #8f6aff, #6a8cff);
+}
+
+.illus-icon-admin {
+  background: linear-gradient(135deg, #ff9a3c, #ff3c7b);
+}
+
+.illus-icon-counselor {
+  background: linear-gradient(135deg, #00d4a6, #0094ff);
+}
+
+/* LABEL */
+.illus-label {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.5px;
+}
+
+/* FLOAT ANIMATION */
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}

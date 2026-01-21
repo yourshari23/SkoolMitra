@@ -1,0 +1,587 @@
+.dashboard {
+  padding: 65px 55px 20px 55px;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+.dash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.dash-header h1 {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.dash-header p {
+  opacity: 0.7;
+  font-size: 14px;
+  margin-top: 4px;
+  font-family:'Times New Roman', Times, serif;
+}
+
+.ghost-btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.dash-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+  gap: 18px;
+  margin-bottom: 32px;
+}
+
+.stat-box {
+  background: rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 18px;
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.stat-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.stat-box span {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.stat-box h2 {
+  font-size: 30px;
+  margin-top: 6px;
+  font-weight: 600;
+}
+
+.stat-add-btn {
+  margin-top: 12px;
+  background: linear-gradient(135deg, #7f7cff, #b36bff);
+  border: none;
+  color: white;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-add-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(127,124,255,0.35);
+}
+
+/* Reports stat neon indicator */
+.report-stat {
+  position: relative;
+  overflow: hidden;
+}
+
+.report-indicator {
+  position: absolute;
+  top: 14px;
+  right: 0;
+  height: calc(100% - 28px);
+  width: 4px;
+  background: linear-gradient(
+    180deg,
+    #ff4d4d,
+    #ff7a7a,
+    #ff4d4d
+  );
+  box-shadow: 0 0 12px rgba(255, 77, 77, 0.9);
+  border-radius: 4px;
+}
+
+.report-indicator span {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-size: 13px;
+  font-weight: 600;
+  color: #ff4d4d;
+}
+
+
+.dash-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 26px;
+  flex-wrap: wrap;
+}
+
+.dash-tabs button {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.18);
+  color: white;
+  padding: 8px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.25s ease;
+}
+
+.dash-tabs button.active {
+  background: linear-gradient(135deg,#7f7cff,#b36bff);
+  border: none;
+}
+
+.section-b {
+  width: 100%;
+}
+
+.section-b.two-column {
+  display: grid;
+  grid-template-columns: 1fr 28%;
+  gap: 26px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
+  gap: 20px;
+}
+
+.data-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 18px;
+  padding: 18px;
+  border: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.data-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255,255,255,0.08);
+}
+
+.data-card h3 {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.data-card p {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.card-actions button {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.card-actions button.danger {
+  color: #ff8b8b;
+  border-color: rgba(255,139,139,0.4);
+}
+
+/* ===============================
+   BATCH STATUS TAG
+================================ */
+
+.batch-status {
+  display: inline-block;
+  margin: 6px 0 8px;
+  padding: 4px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* UPCOMING */
+.batch-status.upcoming {
+  background: rgba(250, 204, 21, 0.15);
+  color: #facc15;
+  border: 1px solid rgba(250, 204, 21, 0.4);
+}
+
+/* ONGOING */
+.batch-status.ongoing {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.4);
+}
+
+/* COMPLETED */
+.batch-status.completed {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+
+/* ===============================
+   FORM COLUMN
+================================ */
+.form-col {
+  background: rgba(255,255,255,0.06);
+  border-radius: 18px;
+  padding: 22px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.form-col h3 {
+  margin-bottom: 14px;
+}
+
+.form-col input,
+.form-col textarea,
+.form-col select {
+  width: 100%;
+  background: rgba(243, 194, 194, 0.08);
+  border: none;
+  color: white;
+  padding: 10px 12px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  outline: none;
+}
+
+.form-col button {
+  width: 100%;
+  background: linear-gradient(135deg,#7f7cff,#b36bff);
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.form-actions button {
+  width: auto;
+  padding: 8px 22px;
+  font-size: 13px;
+  border-radius: 999px;
+}
+
+/* ===============================
+   FIX DROPDOWN VISIBILITY (GLOBAL)
+=============================== */
+
+select option {
+  background-color: #0f0f1a;   /* dark background */
+  color: #ffffff;             /* white text */
+}
+
+/* For Firefox */
+select {
+  color-scheme: dark;
+}
+
+
+/* ===============================
+   REPORT REPLY
+================================ */
+/* Highlight active report while replying */
+.active-reply {
+  border: 1px solid rgba(239, 68, 68, 0.9);
+  box-shadow: 0 0 18px rgba(239, 68, 68, 0.45);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.replying-indicator {
+  font-size: 12px;
+  color: #ef4444;
+  font-weight: 500;
+  margin-bottom: 6px;
+  margin-top: 6px;
+}
+
+/* Admin reply textarea styling */
+.admin-reply-textarea {
+  width: 100%;
+  min-height: 90px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 12px;
+  color: white;
+  padding: 12px;
+  resize: vertical;
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.admin-reply-textarea:focus {
+  border-color: #bed1de;
+  /* box-shadow: 0 0 10px rgba(239,68,68,0.5); */
+}
+
+.report-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 8px 0;
+}
+
+.tag {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.1);
+  
+}
+
+.tag.warning {
+  border-left: 3px solid #facc15;
+}
+
+.tag.danger {
+  border-left: 3px solid #ef4444;
+}
+
+.reply-btn,.save-btn{
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* NEW report tag (Admin dashboard) */
+.report-new {
+  position: relative;
+}
+
+.new-tag {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 11px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #7f7cff, #b36bff);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 0 12px rgba(127,124,255,0.6);
+  z-index: 2;
+  overflow: hidden;
+}
+
+.new-tag:hover::before {
+  animation-play-state: paused;
+}
+.new-tag::before {
+  content: "";
+  position: absolute;
+  inset: -3px; /* thickness space */
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background: conic-gradient(
+    from 0deg,
+    #ff4d4d,
+    transparent 40%,
+    #ff4d4d
+  );
+  animation: rotateBorder 2.6s linear infinite;
+  z-index: -1;
+}
+
+/* Rotation animation */
+@keyframes rotateBorder {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Pending report glow dot */
+.report-card {
+  position: relative;
+}
+
+.pending-dot {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #f50909;
+  box-shadow: 0 0 8px rgba(127,124,255,0.9);
+}
+
+
+/* ===============================
+   MOBILE RESPONSIVE
+================================ */
+@media (max-width: 900px) {
+
+  .dashboard {
+    padding: 30px;
+    margin-top: 40px;
+  }
+
+  .dash-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .section-b.two-column {
+    grid-template-columns: 1fr;
+  }
+
+  .form-col {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+
+  .dash-header h1 {
+    font-size: 22px;
+  }
+
+  .stat-box h2 {
+    font-size: 24px;
+  }
+
+  .dash-tabs button {
+    font-size: 13px;
+    padding: 6px 14px;
+  }
+}
+
+
+
+.toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  background: rgba(30,30,40,0.9);
+  color: white;
+  animation: slideUp 0.3s ease;
+  z-index: 999;
+}
+
+.toast.success { border-left: 4px solid #7f7cff; }
+.toast.error { border-left: 4px solid #ff6b6b; }
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+
+/* ===============================
+   DELETE CONFIRMATION MODAL
+================================ */
+.danger-pop {
+  background: transparent;
+  border: 1px solid rgba(217, 9, 9, 0.2);
+  color: rgb(232, 14, 14);
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.delete-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  animation: fadeIn 0.2s ease;
+}
+
+.delete-modal {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 18px;
+  padding: 24px 26px;
+  width: 340px;
+  color: white;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+  animation: scaleIn 0.2s ease;
+}
+
+.delete-modal h3 {
+  margin-bottom: 8px;
+}
+
+.delete-modal p {
+  font-size: 14px;
+  opacity: 0.85;
+  margin-bottom: 20px;
+}
+
+.delete-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.94);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Shake animation for delete confirmation */
+@keyframes shake {
+  0%   { transform: translateX(0); }
+  20%  { transform: translateX(-6px); }
+  40%  { transform: translateX(6px); }
+  60%  { transform: translateX(-4px); }
+  80%  { transform: translateX(4px); }
+  100% { transform: translateX(0); }
+}
+
+.delete-modal.shake {
+  animation: shake 0.45s ease;
+}
+

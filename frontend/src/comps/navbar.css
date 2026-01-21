@@ -1,0 +1,108 @@
+.navbar {
+  position: sticky;
+  top: 20px;
+  z-index: 100;
+  margin: 0 4vw;
+  padding: 14px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.spl {
+  background: linear-gradient(45deg, #8a3024, #735faf);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: cursive;
+  font-size: 1.8rem;
+}
+
+/* LOGO */
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  cursor: pointer;
+}
+
+/* LINKS */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: rgba(255,255,255,0.8);
+  font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+/* LOGIN BUTTON */
+.nav-btn {
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg,#8a2be2,#ff2f92);
+  color: #fff;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+/* BURGER */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.burger span {
+  width: 22px;
+  height: 2px;
+  background: #fff;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .nav-links {
+    position: fixed;
+    inset: 0;
+    background: rgba(5,1,13,0.9);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: 0.3s ease;
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+  }
+
+  .burger {
+    display: flex;
+  }
+}
+.close-btn {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  font-size: 1.4rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .close-btn {
+    display: block;
+  }
+}

@@ -1,0 +1,143 @@
+.hero {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  padding: 0 6vw;
+}
+
+.hero-content {
+  max-width: 620px;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 4vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hero h1 span {
+  background: linear-gradient(90deg, #7c9cff, #b892ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  margin-top: 1.2rem;
+  font-size: 1.05rem;
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.primary-btn {
+  padding: 12px 26px;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #7c9cff, #b892ff);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.secondary-btn {
+  padding: 12px 26px;
+  border-radius: 30px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+}
+
+
+/* ---------- HERO ANIMATIONS ---------- */
+
+.hero-content {
+  animation: heroFadeUp 0.8s ease-out forwards;
+}
+
+.hero-illustration {
+  animation: heroFadeRight 1s ease-out forwards;
+}
+
+.hero-actions button {
+  animation: heroButtonPop 0.6s ease-out forwards;
+}
+
+.hero-actions button:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+/* Keyframes */
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes heroButtonPop {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero-actions button {
+  transition: all 0.25s ease;
+}
+
+.hero-actions button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255,255,255,0.15);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 90px;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+}
